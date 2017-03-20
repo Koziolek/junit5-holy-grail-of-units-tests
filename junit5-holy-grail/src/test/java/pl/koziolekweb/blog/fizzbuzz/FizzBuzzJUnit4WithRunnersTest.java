@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by BKuczynski on 2017-03-07.
+ *
  */
 @RunWith(JUnitParamsRunner.class)
 public class FizzBuzzJUnit4WithRunnersTest {

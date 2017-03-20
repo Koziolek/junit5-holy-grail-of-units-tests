@@ -1,20 +1,19 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
- * Created by BKuczynski on 2017-03-07.
+ *
  */
 public class FizzBuzzJUnit4WithoutRunnersTest {
 
     private FizzBuzz sut;
 
     @Before
-    public void setup(){
+    public void setup() {
         sut = new FizzBuzz();
     }
 
