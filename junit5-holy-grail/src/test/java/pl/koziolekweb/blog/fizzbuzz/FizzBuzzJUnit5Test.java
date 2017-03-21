@@ -1,18 +1,18 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit4WithoutRunnersTest {
+public class FizzBuzzJUnit5Test {
 
     private FizzBuzz sut;
 
-    @Before
+    @BeforeEach
     public void setup() {
         sut = new FizzBuzz();
     }
