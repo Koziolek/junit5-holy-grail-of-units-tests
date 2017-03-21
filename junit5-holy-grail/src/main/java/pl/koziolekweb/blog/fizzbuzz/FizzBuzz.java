@@ -5,14 +5,14 @@ package pl.koziolekweb.blog.fizzbuzz;
  */
 public class FizzBuzz {
 
-    public String fizzBuzz(int in) {
-        boolean of3 = in % 3 == 0;
-        boolean of5 = in % 5 == 0;
+	public String fizzBuzz(int in) {
+		boolean of3 = in % 3 == 0;
+		boolean of5 = in % 5 == 0;
 
-        if (of3 && of5) return "FizzBuzz";
-        if (of5) return "Buzz";
-        if (of3) return "Fizz";
+		if (of3 && of5) return "FizzBuzz";
+		if (of5) return "Buzz";
+		if (of3) return "Fizz";
 
-        return in + "";
-    }
+		return in + "";
+	}
 }
