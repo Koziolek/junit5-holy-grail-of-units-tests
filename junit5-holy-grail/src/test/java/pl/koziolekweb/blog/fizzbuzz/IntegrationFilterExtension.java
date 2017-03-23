@@ -1,0 +1,37 @@
+package pl.koziolekweb.blog.fizzbuzz;
+
+import org.junit.jupiter.api.extension.ConditionEvaluationResult;
+import org.junit.jupiter.api.extension.TestExecutionCondition;
+import org.junit.jupiter.api.extension.TestExtensionContext;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+/**
+ * Created by BKuczynski on 2017-03-21.
+ */
+public class IntegrationFilterExtension implements TestExecutionCondition {
+
+	@Override
+	public ConditionEvaluationResult evaluate(TestExtensionContext context) {
+		String ci_name = Optional.ofNullable(System.getenv("ci_name")).orElse("DEV");
+		if (!ci_name.equals("CI"))
+			return context.getTestMethod()
+					.map(Method::getDeclaredAnnotations)
+					.map(Arrays::stream)
+					.filter(this::instanceOf)
+					.map($ -> ConditionEvaluationResult.disabled("Not on CI"))
+					.orElse(ConditionEvaluationResult.enabled(""));
+		return ConditionEvaluationResult.enabled("");
+	}
+
+	private boolean instanceOf(Stream<Annotation> annotationStream) {
+		return annotationStream
+				.filter(a -> a instanceof Integration)
+				.findFirst().map($ -> Boolean.TRUE)
+				.orElse(Boolean.FALSE);
+	}
+}
