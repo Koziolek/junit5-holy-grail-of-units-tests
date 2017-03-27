@@ -1,21 +1,20 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit4WithoutRunnersTest {
+@Disabled // bug in IntelliJ
+public class FizzBuzzJUnit5DisableTest {
 
 	private FizzBuzz sut;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		sut = new FizzBuzz();
 	}
@@ -46,6 +45,5 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 		assertEquals("2", sut.fizzBuzz(2));
 		assertEquals("8", sut.fizzBuzz(8));
 		assertEquals("11", sut.fizzBuzz(11));
-
 	}
 }

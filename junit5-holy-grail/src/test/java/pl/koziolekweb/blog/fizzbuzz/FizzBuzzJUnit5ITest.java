@@ -1,26 +1,26 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit4WithoutRunnersTest {
+@ExtendWith(IntegrationFilterExtension.class)
+public class FizzBuzzJUnit5ITest {
 
 	private FizzBuzz sut;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		sut = new FizzBuzz();
 	}
 
 	@Test
+	@Integration
 	public void shouldReturnFizzBuzzIfDiv3And5() throws Exception {
 		assertEquals("FizzBuzz", sut.fizzBuzz(15));
 		assertEquals("FizzBuzz", sut.fizzBuzz(30));
@@ -28,6 +28,7 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 	}
 
 	@Test
+	@Integration
 	public void shouldReturnBuzzIfDiv5() throws Exception {
 		assertEquals("Buzz", sut.fizzBuzz(5));
 		assertEquals("Buzz", sut.fizzBuzz(10));
@@ -35,6 +36,7 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 	}
 
 	@Test
+	@Integration
 	public void shouldReturnFizzIfDiv3() throws Exception {
 		assertEquals("Fizz", sut.fizzBuzz(3));
 		assertEquals("Fizz", sut.fizzBuzz(6));
@@ -42,10 +44,10 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 	}
 
 	@Test
+	@Integration
 	public void shouldReturnVal() throws Exception {
 		assertEquals("2", sut.fizzBuzz(2));
 		assertEquals("8", sut.fizzBuzz(8));
 		assertEquals("11", sut.fizzBuzz(11));
-
 	}
 }

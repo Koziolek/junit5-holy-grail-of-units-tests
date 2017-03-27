@@ -11,13 +11,15 @@ target/
 test-output/
 *.zip
 *.odp
-*.pdf
+
 *.ipr
 *.iws
 *.iml
 .idea/
+
 VAADIN/
 /tutors/build/
 /tutors/.gradle/
 /exercises/build/
 /exercises/.gradle/
+

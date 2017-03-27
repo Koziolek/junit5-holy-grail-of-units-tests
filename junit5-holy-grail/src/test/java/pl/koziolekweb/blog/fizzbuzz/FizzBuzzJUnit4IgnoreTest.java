@@ -1,17 +1,16 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit4WithoutRunnersTest {
+@Ignore
+public class FizzBuzzJUnit4IgnoreTest {
 
 	private FizzBuzz sut;
 
@@ -46,6 +45,5 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 		assertEquals("2", sut.fizzBuzz(2));
 		assertEquals("8", sut.fizzBuzz(8));
 		assertEquals("11", sut.fizzBuzz(11));
-
 	}
 }
