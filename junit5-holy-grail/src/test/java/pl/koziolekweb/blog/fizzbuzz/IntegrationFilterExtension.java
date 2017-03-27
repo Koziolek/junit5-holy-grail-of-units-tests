@@ -18,20 +18,16 @@ public class IntegrationFilterExtension implements TestExecutionCondition {
 	@Override
 	public ConditionEvaluationResult evaluate(TestExtensionContext context) {
 		String ci_name = Optional.ofNullable(System.getenv("ci_name")).orElse("DEV");
-		if (!ci_name.equals("CI"))
+		if (!ci_name.equals("CI")) {
 			return context.getTestMethod()
 					.map(Method::getDeclaredAnnotations)
 					.map(Arrays::stream)
-					.filter(this::instanceOf)
+					.orElse(Stream.empty())
+					.filter(a -> a instanceof Integration)
+					.findFirst()
 					.map($ -> ConditionEvaluationResult.disabled("Not on CI"))
 					.orElse(ConditionEvaluationResult.enabled(""));
+		}
 		return ConditionEvaluationResult.enabled("");
-	}
-
-	private boolean instanceOf(Stream<Annotation> annotationStream) {
-		return annotationStream
-				.filter(a -> a instanceof Integration)
-				.findFirst().map($ -> Boolean.TRUE)
-				.orElse(Boolean.FALSE);
 	}
 }
