@@ -1,10 +1,12 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.logging.Logger;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +16,16 @@ import static org.junit.Assert.assertEquals;
 public class FizzBuzzJUnit4WithoutRunnersTest {
 
 	private FizzBuzz sut;
+
+	@BeforeClass
+	public static void classSetup() {
+		Logger.getLogger("JUnit 4").info("Started at " + LocalDateTime.now());
+	}
+
+	@AfterClass
+	public static void classTeardown() {
+		Logger.getLogger("JUnit 4").info("Finished at " + LocalDateTime.now());
+	}
 
 	@Before
 	public void setup() {

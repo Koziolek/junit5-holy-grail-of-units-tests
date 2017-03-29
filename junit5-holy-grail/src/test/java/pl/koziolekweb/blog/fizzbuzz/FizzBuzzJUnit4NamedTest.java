@@ -1,39 +1,29 @@
 package pl.koziolekweb.blog.fizzbuzz;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestName;
 
-import java.time.LocalDateTime;
-import java.util.logging.Logger;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit5Test {
+public class FizzBuzzJUnit4NamedTest {
 
+	@Rule
+	public TestName name = new TestName();
 	private FizzBuzz sut;
 
-	@BeforeAll
-	static void classSetup() {
-		Logger.getLogger("JUnit 4").info("Started at " + LocalDateTime.now());
-	}
-
-	@AfterAll
-	static void classTeardown() {
-		Logger.getLogger("JUnit 4").info("Finished at " + LocalDateTime.now());
-	}
-
-	@BeforeEach
+	@Before
 	public void setup() {
 		sut = new FizzBuzz();
 	}
 
 	@Test
 	public void shouldReturnFizzBuzzIfDiv3And5() throws Exception {
+		System.out.println(name.getMethodName());
 		assertEquals("FizzBuzz", sut.fizzBuzz(15));
 		assertEquals("FizzBuzz", sut.fizzBuzz(30));
 		assertEquals("FizzBuzz", sut.fizzBuzz(150));
@@ -58,5 +48,6 @@ public class FizzBuzzJUnit5Test {
 		assertEquals("2", sut.fizzBuzz(2));
 		assertEquals("8", sut.fizzBuzz(8));
 		assertEquals("11", sut.fizzBuzz(11));
+
 	}
 }
