@@ -51,8 +51,8 @@ public class FizzBuzzJUnit4WithoutRunnersTest {
 		assertEquals("Fizz", sut.fizzBuzz(3));
 		assertEquals("Fizz", sut.fizzBuzz(6));
 		assertEquals("Fizz", sut.fizzBuzz(99));
-	}
 
+	}
 	@Test
 	public void shouldReturnVal() throws Exception {
 		assertEquals("2", sut.fizzBuzz(2));
