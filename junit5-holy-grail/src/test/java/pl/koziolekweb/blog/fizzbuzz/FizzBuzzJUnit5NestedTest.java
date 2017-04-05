@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  */
 @DisplayName("FizzBuzz should")
-public class FizzBuzzJUnit5NeastedTest {
+public class FizzBuzzJUnit5NestedTest {
 
 	private FizzBuzz sut;
 
