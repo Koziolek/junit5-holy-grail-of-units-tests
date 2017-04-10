@@ -1,10 +1,11 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.parametrized;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 import org.junit.jupiter.params.provider.ValueSource;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

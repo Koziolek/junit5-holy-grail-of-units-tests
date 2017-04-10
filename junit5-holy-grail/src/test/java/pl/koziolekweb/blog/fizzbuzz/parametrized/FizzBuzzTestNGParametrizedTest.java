@@ -1,6 +1,7 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.parametrized;
 
 import org.testng.annotations.*;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import java.time.LocalDateTime;
 import java.util.logging.Logger;

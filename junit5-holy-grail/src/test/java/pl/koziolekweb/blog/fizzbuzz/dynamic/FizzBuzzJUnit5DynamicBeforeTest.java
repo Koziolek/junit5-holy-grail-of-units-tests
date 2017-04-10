@@ -1,10 +1,10 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.dynamic;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.TestFactory;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,19 +17,17 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 /**
  *
  */
-@DisplayName("FizzBuzz should")
-public class FizzBuzzJUnit5DynamicTest {
-
-	private FizzBuzz sut;
-
-	@BeforeEach
-	public void setup() {
-		sut = new FizzBuzz();
-	}
+public class FizzBuzzJUnit5DynamicBeforeTest {
 
 	@Nested
-	@DisplayName("return FizzBuzz when dividable by 3 and 5")
 	class DividedBy15 {
+
+		private FizzBuzz sut;
+
+		@BeforeEach
+		public void setUp() {
+			sut = new FizzBuzz();
+		}
 
 		@TestFactory
 		public Collection<DynamicTest> shouldReturnFizzBuzzIfDiv3And5() throws Exception {
@@ -43,8 +41,13 @@ public class FizzBuzzJUnit5DynamicTest {
 
 
 	@Nested
-	@DisplayName("return Buzz when dividable by 5")
 	class DividedBy5 {
+		private FizzBuzz sut;
+
+		@BeforeEach
+		public void setUp() {
+			sut = new FizzBuzz();
+		}
 
 		@TestFactory
 		public Stream<DynamicTest> shouldReturnBuzzIfDiv5() throws Exception {
@@ -59,8 +62,13 @@ public class FizzBuzzJUnit5DynamicTest {
 
 
 	@Nested
-	@DisplayName("return Fizz when dividable by 3")
 	class DividedBy3 {
+		private FizzBuzz sut;
+
+		@BeforeEach
+		public void setUp() {
+			sut = new FizzBuzz();
+		}
 
 		@TestFactory
 		public Iterable<DynamicTest> shouldReturnFizzIfDiv3() throws Exception {
@@ -73,8 +81,13 @@ public class FizzBuzzJUnit5DynamicTest {
 	}
 
 	@Nested
-	@DisplayName("return number in other cases")
 	class NotDividedBy3Or5 {
+		private FizzBuzz sut;
+
+		@BeforeEach
+		public void setUp() {
+			sut = new FizzBuzz();
+		}
 
 		@TestFactory
 		public Iterator<DynamicTest> shouldReturnVal() throws Exception {

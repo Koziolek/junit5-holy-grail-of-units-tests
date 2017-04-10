@@ -1,9 +1,10 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.descriptive_and_tagged;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.Assert.assertEquals;
 

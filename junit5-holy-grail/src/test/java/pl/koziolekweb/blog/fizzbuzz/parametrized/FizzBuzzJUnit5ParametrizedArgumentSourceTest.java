@@ -1,4 +1,4 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.parametrized;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ContainerExtensionContext;
@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.ObjectArrayArguments;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import java.util.stream.Stream;
 

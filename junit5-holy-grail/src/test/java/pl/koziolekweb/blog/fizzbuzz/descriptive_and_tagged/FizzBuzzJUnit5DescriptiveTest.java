@@ -1,16 +1,17 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.descriptive_and_tagged;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  */
-@Disabled // bug in IntelliJ
-public class FizzBuzzJUnit5DisableTest {
+@DisplayName("FizzBuzz should")
+public class FizzBuzzJUnit5DescriptiveTest {
 
 	private FizzBuzz sut;
 
@@ -20,6 +21,7 @@ public class FizzBuzzJUnit5DisableTest {
 	}
 
 	@Test
+	@DisplayName("return FizzBuzz when dividable by 3 and 5")
 	public void shouldReturnFizzBuzzIfDiv3And5() throws Exception {
 		assertEquals("FizzBuzz", sut.fizzBuzz(15));
 		assertEquals("FizzBuzz", sut.fizzBuzz(30));
@@ -27,6 +29,7 @@ public class FizzBuzzJUnit5DisableTest {
 	}
 
 	@Test
+	@DisplayName("return Buzz when dividable by 5")
 	public void shouldReturnBuzzIfDiv5() throws Exception {
 		assertEquals("Buzz", sut.fizzBuzz(5));
 		assertEquals("Buzz", sut.fizzBuzz(10));
@@ -34,6 +37,7 @@ public class FizzBuzzJUnit5DisableTest {
 	}
 
 	@Test
+	@DisplayName("return Fizz when dividable by 3")
 	public void shouldReturnFizzIfDiv3() throws Exception {
 		assertEquals("Fizz", sut.fizzBuzz(3));
 		assertEquals("Fizz", sut.fizzBuzz(6));
@@ -41,6 +45,7 @@ public class FizzBuzzJUnit5DisableTest {
 	}
 
 	@Test
+	@DisplayName("return number in other cases")
 	public void shouldReturnVal() throws Exception {
 		assertEquals("2", sut.fizzBuzz(2));
 		assertEquals("8", sut.fizzBuzz(8));

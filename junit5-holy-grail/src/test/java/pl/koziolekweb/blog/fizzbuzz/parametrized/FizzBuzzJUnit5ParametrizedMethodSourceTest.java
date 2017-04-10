@@ -1,16 +1,18 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.parametrized;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
  */
-public class FizzBuzzJUnit5ParametrizedCsvFileSourceTest {
+public class FizzBuzzJUnit5ParametrizedMethodSourceTest {
 
     private FizzBuzz sut;
 
@@ -20,26 +22,42 @@ public class FizzBuzzJUnit5ParametrizedCsvFileSourceTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/data3And15.csv")
+    @MethodSource(names = "data3And5")
     public void shouldReturnFizzBuzzIfDiv3And5(int p) throws Exception {
         assertEquals("FizzBuzz", sut.fizzBuzz(p));
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/data5Only.csv")
+    @MethodSource(names = "data5Only")
     public void shouldReturnBuzzIfDiv5(int p) throws Exception {
         assertEquals("Buzz", sut.fizzBuzz(p));
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/data3Only.csv")
+    @MethodSource(names = "data3Only")
     public void shouldReturnFizzIfDiv3(int p) throws Exception {
         assertEquals("Fizz", sut.fizzBuzz(p));
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/dataOtherValues.csv")
+    @MethodSource(names = "dataOtherValues")
     public void shouldReturnVal(int p) throws Exception {
         assertEquals(p + "", sut.fizzBuzz(p));
+    }
+
+    static Stream data3And5() {
+        return Stream.of(15, 30, 150);
+    }
+
+    static Stream data3Only() {
+        return Stream.of(3, 6, 99);
+    }
+
+    static Stream data5Only() {
+        return Stream.of(5, 10, 50);
+    }
+
+    static Stream dataOtherValues() {
+        return Stream.of(2, 8, 11);
     }
 }

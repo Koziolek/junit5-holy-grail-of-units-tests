@@ -1,8 +1,9 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.ignored;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.Assert.assertEquals;
 
