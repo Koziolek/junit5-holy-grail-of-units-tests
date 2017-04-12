@@ -1,10 +1,9 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.extensions_and_di;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.TestExecutionCondition;
 import org.junit.jupiter.api.extension.TestExtensionContext;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.extensions_and_di;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

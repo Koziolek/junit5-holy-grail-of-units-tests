@@ -1,8 +1,9 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.extensions_and_di;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  */
 @ExtendWith(IntegrationFilterExtension.class)
-public class FizzBuzzJUnit5ITest {
+public class FizzBuzzJUnit5ExtendedTest {
 
 	private FizzBuzz sut;
 

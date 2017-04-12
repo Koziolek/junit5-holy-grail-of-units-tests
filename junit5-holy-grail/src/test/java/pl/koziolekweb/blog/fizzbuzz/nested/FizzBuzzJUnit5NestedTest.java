@@ -1,9 +1,10 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.nested;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

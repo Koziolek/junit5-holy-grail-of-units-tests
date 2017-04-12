@@ -1,7 +1,8 @@
-package pl.koziolekweb.blog.fizzbuzz;
+package pl.koziolekweb.blog.fizzbuzz.assertions;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pl.koziolekweb.blog.fizzbuzz.FizzBuzz;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
