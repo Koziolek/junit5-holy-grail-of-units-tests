@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
  * Created by BKuczynski on 2017-03-21.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.METHOD})
 public @interface Integration {
+
+    String value() default "DEV";
 }

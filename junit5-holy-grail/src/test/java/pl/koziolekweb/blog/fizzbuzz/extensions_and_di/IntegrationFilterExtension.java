@@ -3,15 +3,12 @@ package pl.koziolekweb.blog.fizzbuzz.extensions_and_di;
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.TestExecutionCondition;
 import org.junit.jupiter.api.extension.TestExtensionContext;
-import org.junit.platform.commons.util.AnnotationUtils;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Stream;
+import java.util.function.Predicate;
 
+import static java.lang.String.format;
 import static org.junit.platform.commons.util.AnnotationUtils.isAnnotated;
 
 /**
@@ -19,15 +16,19 @@ import static org.junit.platform.commons.util.AnnotationUtils.isAnnotated;
  */
 public class IntegrationFilterExtension implements TestExecutionCondition {
 
-	@Override
-	public ConditionEvaluationResult evaluate(TestExtensionContext context) {
-		String ci_name = Optional.ofNullable(System.getenv("ci_name")).orElse("DEV");
-		if (!ci_name.equals("CI")) {
-			return context.getTestMethod()
-					.filter(m-> isAnnotated(m, Integration.class))
-					.map($ -> ConditionEvaluationResult.disabled("Not on CI"))
-					.orElse(ConditionEvaluationResult.enabled(""));
-		}
-		return ConditionEvaluationResult.enabled("");
-	}
+    private static final String CI_NAME = Optional.ofNullable(
+            System.getenv("ci_name")
+    )
+            .orElse("DEV");
+
+    @Override
+    public ConditionEvaluationResult evaluate(TestExtensionContext context) {
+        return context.getTestMethod()
+                .filter(m -> isAnnotated(m, Integration.class))
+                .map(m -> m.getAnnotation(Integration.class).value())
+                .filter(((Predicate<String>) s -> CI_NAME.equals(s)).or(s1 -> CI_NAME.equals("DEV")))
+                .map($ -> ConditionEvaluationResult.enabled(""))
+                .orElse(ConditionEvaluationResult.disabled(format("This test %s cannot be run on %s.", context.getTestMethod().map(Method::getName).get(), CI_NAME)));
+    }
+
 }
