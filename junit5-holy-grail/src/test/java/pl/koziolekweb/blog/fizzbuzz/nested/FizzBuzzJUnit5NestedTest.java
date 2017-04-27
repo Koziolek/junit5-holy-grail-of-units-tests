@@ -22,10 +22,11 @@ public class FizzBuzzJUnit5NestedTest {
 	}
 
 	@Nested
-	@DisplayName("return FizzBuzz when dividable by 3 and 5")
+	@DisplayName("return FizzBuzz")
 	class DividedBy15 {
 
 		@Test
+		@DisplayName("when dividable by 3 and 5: ")
 		public void shouldReturnFizzBuzzIfDiv3And5() throws Exception {
 			assertEquals("FizzBuzz", sut.fizzBuzz(15));
 			assertEquals("FizzBuzz", sut.fizzBuzz(30));
@@ -35,9 +36,11 @@ public class FizzBuzzJUnit5NestedTest {
 
 
 	@Nested
-	@DisplayName("return Buzz when dividable by 5")
+	@DisplayName("return Buzz")
 	class DividedBy5 {
+
 		@Test
+		@DisplayName("when dividable by 5")
 		public void shouldReturnBuzzIfDiv5() throws Exception {
 			assertEquals("Buzz", sut.fizzBuzz(5));
 			assertEquals("Buzz", sut.fizzBuzz(10));
@@ -47,10 +50,11 @@ public class FizzBuzzJUnit5NestedTest {
 
 
 	@Nested
-	@DisplayName("return Fizz when dividable by 3")
+	@DisplayName("return Fizz")
 	class DividedBy3 {
 
 		@Test
+		@DisplayName("when dividable by 3")
 		public void shouldReturnFizzIfDiv3() throws Exception {
 			assertEquals("Fizz", sut.fizzBuzz(3));
 			assertEquals("Fizz", sut.fizzBuzz(6));
@@ -59,10 +63,11 @@ public class FizzBuzzJUnit5NestedTest {
 	}
 
 	@Nested
-	@DisplayName("return number in other cases")
+	@DisplayName("return number")
 	class NotDividedBy3Or5 {
 
 		@Test
+		@DisplayName("in other cases")
 		public void shouldReturnVal() throws Exception {
 			assertEquals("2", sut.fizzBuzz(2));
 			assertEquals("8", sut.fizzBuzz(8));
