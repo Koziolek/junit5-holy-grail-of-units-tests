@@ -21,6 +21,7 @@ public class FizzBuzzJUnit5DisableTest {
 	}
 
 	@Test
+	@Disabled
 	public void shouldReturnFizzBuzzIfDiv3And5() throws Exception {
 		assertEquals("FizzBuzz", sut.fizzBuzz(15));
 		assertEquals("FizzBuzz", sut.fizzBuzz(30));
