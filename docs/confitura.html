@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Wprowadzenie do JUnit 5</title>
+
+    <meta name="description" content="Presentation about JUnit5">
+    <meta name="author" content="Bartek 'Koziołek' Kuczyński">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h2>Wprowadzenie do JUnit 5</h2>
+            <p>
+                <small><a href="http://koziolekweb.pl">Bartek „Koziołek” Kuczyński</a> / <a
+                        href="http://twitter.com/koziolek">@koziolek</a></small>
+            </p>
+        </section>
+
+        <section>
+            <h3>O czym mówić nie będę</h3>
+            <p class="fragment">Co to są testy?</p>
+            <p class="fragment">Po co są testy?</p>
+            <p class="fragment">Jak pisać dobre testy?</p>
+            <p class="fragment">Spock</p>
+        </section>
+
+        <section>
+            <p>Najpopularniejszy (?) framework do testów</p>
+            <p class="fragment">Część platformy xUnit</p>
+            <p class="fragment">SUnit – Smalltalk testing framework</p>
+        </section>
+
+        <section>
+            <h3>(S)Twórcy</h3>
+            <div class="left fragment">
+                <img src="images/kbeck.jpg">
+                <p class="fragment">Kent Beck</p>
+            </div>
+            <div class="right fragment">
+                <img src="images/erich_gamma.jpg">
+                <p class="fragment">Erich Gamma</p>
+            </div>
+        </section>
+
+        <section>
+            <h4>JUnit 4</h4>
+            <img src="images/JUnit4.gif" />
+        </section>
+
+        <section>
+            <h4>JUnit 5</h4>
+            <img src="images/component-diagram.png" style="background: white"/>
+        </section>
+
+        <section>
+            <h4>JUnit 5</h4>
+            <p class="fragment">=</p>
+            <p class="fragment">JUnit Platform</p>
+            <p class="fragment">+ JUnit Jupiter</p>
+            <p class="fragment">+ JUnit Vintage</p>
+        </section>
+
+        <section>
+            <h4>JUnit Platform</h4>
+            <img src="images/platform.PNG" style="background: white"/>
+        </section>
+
+        <section>
+            <h4>JUnit Jupiter & Vintage</h4>
+            <img src="images/engies.PNG" style="background: white"/>
+        </section>
+
+        <section>
+            <h4>Opentest4j</h4>
+            <img src="images/opentest.PNG" style="background: white"/>
+        </section>
+
+        <section>
+            <h3>Live <s>failing</s> <samp class="fragment">coding</samp></h3>
+        </section>
+
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
