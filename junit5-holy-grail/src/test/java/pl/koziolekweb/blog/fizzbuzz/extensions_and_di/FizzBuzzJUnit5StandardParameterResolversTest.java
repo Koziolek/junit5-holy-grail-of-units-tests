@@ -26,7 +26,7 @@ public class FizzBuzzJUnit5StandardParameterResolversTest {
 
 	@BeforeAll
 	static void classSetup(TestInfo testInfo) {
-		Logger.getLogger("JUnit 4").info(
+		Logger.getLogger("JUnit 5").info(
 				String
 						.format("Test from %s started at %s",
 								testInfo.getTestClass().map(Class::getName).get(),
@@ -37,7 +37,7 @@ public class FizzBuzzJUnit5StandardParameterResolversTest {
 
 	@AfterAll
 	static void classTeardown(TestInfo testInfo) {
-		Logger.getLogger("JUnit 4").info(
+		Logger.getLogger("JUnit 5").info(
 				String
 						.format("Test from %s finished at %s",
 								testInfo.getTestClass().map(Class::getName).get(),
@@ -48,7 +48,7 @@ public class FizzBuzzJUnit5StandardParameterResolversTest {
 
 	@BeforeEach
 	public void setup(TestInfo testInfo) {
-		Logger.getLogger("JUnit 4").info(
+		Logger.getLogger("JUnit 5").info(
 				String
 						.format("Test %s from %s started at %s",
 								testInfo.getDisplayName(),
@@ -62,7 +62,7 @@ public class FizzBuzzJUnit5StandardParameterResolversTest {
 	@AfterEach
 	public void tearDown(TestInfo testInfo) {
 		sut = null;
-		Logger.getLogger("JUnit 4").info(
+		Logger.getLogger("JUnit 5").info(
 				String
 						.format("Test %s from %s finished at %s",
 								testInfo.getDisplayName(),
@@ -74,7 +74,7 @@ public class FizzBuzzJUnit5StandardParameterResolversTest {
 
 	@RepeatedTest(10)
 	public void shouldReturnFizzBuzzIfDiv3And5(RepetitionInfo repetitionInfo, TestInfo testInfo) throws Exception {
-		Logger.getLogger("JUnit 4").info(
+		Logger.getLogger("JUnit 5").info(
 				String
 						.format("Running %s %s of %s",
 								testInfo.getTestMethod().map(Method::getName).get(),

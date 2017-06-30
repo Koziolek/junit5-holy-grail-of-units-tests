@@ -28,7 +28,8 @@ public class CustomExtension implements TestTemplateInvocationContextProvider {
 		TestTemplateInvocationContext context1 = new TestTemplateInvocationContext() {
 			@Override
 			public String getDisplayName(int invocationIndex) {
-				Logger.getLogger("JUnit 4").info("-------------------------------+++------------------");
+				Logger.getLogger("JUnit 5")
+						.info("-------------------------------+++------------------");
 				return "Integration test";
 			}
 
